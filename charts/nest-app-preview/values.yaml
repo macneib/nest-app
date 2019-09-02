@@ -1,0 +1,117 @@
+# Default values for node.
+# This is a YAML-formatted file.
+# Declare variables to be passed into your templates.
+
+replicaCount: 1
+
+image:
+  repository: macneib/nest-app
+  tag: 0.0.6
+  pullPolicy: IfNotPresent
+
+podAnnotations: {}
+  # prometheus.io/scrape: "true"
+  # prometheus.io/path: "/metrics"
+  # prometheus.io/port: "9999"
+
+extraVolumes: []
+extraVolumeMounts: []
+
+env: []
+  # - name: MONGODB_USERNAME
+  #   value: user
+  # - name: MONGODB_URI
+  #   value: "mongodb://localhost/your-database"
+
+envFrom: []
+  # - secretRef:
+  #     name: secret-name
+
+secret: {}
+#    MONGODB_PASSWORD: YourBase64EncodedPassword=
+
+readinessProbe:
+  httpGet:
+    path: /healthz
+    port: 3000
+  initialDelaySeconds: 2
+  periodSeconds: 2
+  failureThreshold: 2
+  successThreshold: 1 # default
+  timeoutSeconds: 1 # default
+
+livenessProbe:
+  httpGet:
+    path: /healthz
+    port: 3000
+  initialDelaySeconds: 5
+  periodSeconds: 10
+  failureThreshold: 3 # default
+  successThreshold: 1 # default
+  timeoutSeconds: 1 # default
+
+extraPorts:
+# Prometheus metrics
+  - name: prometheus
+    containerPort: 9999
+    protocol: TCP
+
+service:
+  type: ClusterIP
+  internalPort: 3000  
+  externalPort: 80
+  annotations:
+    fabric8.io/expose: "true"
+    fabric8.io/ingress.annotations: "kubernetes.io/ingress.class: nginx"
+
+ingress:
+  enabled: false
+  annotations: {}
+    # kubernetes.io/ingress.class: traefik
+    # ingress.kubernetes.io/ssl-redirect: "false"
+    # traefik.frontend.rule.type: PathPrefixStrip
+  hosts:
+    # - "/"
+    # - "domain.com/xyz"
+    # - "domain.com"
+  tls: []
+  #  - secretName: chart-example-tls
+  #    hosts:
+  #      - chart-example.local
+
+resources:
+  limits:
+   cpu: 100m
+   memory: 128Mi
+  requests:
+   cpu: 100m
+   memory: 128Mi
+
+nodeSelector: {}
+
+tolerations: []
+
+affinity: {}
+
+##
+## PostgreSQL chart configuration
+##
+
+##
+postgresql:
+  ## Whether to deploy a PostgreSQL server to satisfy the applications database requirements. 
+  ## To use an external database set this to false and configure the externalDatabase parameters
+  enabled: true
+  ## Disable PostgreSQL replication
+  replication:
+    enabled: false
+  ## PostgreSQL admin user
+  ## ref: https://github.com/bitnami/bitnami-docker-postgresql/blob/master/README.md#setting-the-root-password-on-first-run
+  postgresqlUsername: wildfire
+  postgresqlPassword: wildfire
+  postgresqlDatabase: wildfire
+
+externaldb:
+  username: wildfire
+  password: wildfire
+  database: wildfire
