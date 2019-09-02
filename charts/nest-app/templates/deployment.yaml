@@ -53,21 +53,5 @@ spec:
               protocol: TCP
 {{ toYaml .Values.extraPorts | indent 12 }}
           resources:
-            limits:
-              cpu: 2000m
-              memory: 512Mi
-            requests:
-              cpu: 100m
-              memory: 64Mi
-    {{- with .Values.nodeSelector }}
-      nodeSelector:
-{{ toYaml . | indent 8 }}
-    {{- end }}
-    {{- with .Values.affinity }}
-      affinity:
-{{ toYaml . | indent 8 }}
-    {{- end }}
-    {{- with .Values.tolerations }}
-      tolerations:
-{{ toYaml . | indent 8 }}
-    {{- end }}
+{{ toYaml .Values.resources | indent 12 }}
+      terminationGracePeriodSeconds: {{ .Values.terminationGracePeriodSeconds }}
