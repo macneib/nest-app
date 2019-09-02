@@ -1,17 +1,16 @@
 apiVersion: skaffold/v1beta2
 kind: Config
 build:
-  tagPolicy:
-    envTemplate:
-      template: '{{.DOCKER_REGISTRY}}/{{.IMAGE_NAME}}:{{.VERSION}}'
   artifacts:
   - image: macneib/nest-app
     context: .
     docker: {}
+  tagPolicy:
+    envTemplate:
+      template: '{{.DOCKER_REGISTRY}}/{{.IMAGE_NAME}}:{{.VERSION}}'
   local: {}
 deploy:
-  kubectl:
-    manifests:
+  kubectl: {}
 profiles:
 - name: dev
   build:
