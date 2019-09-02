@@ -1,1 +1,1 @@
-# Nest.js application
+# Javascript application

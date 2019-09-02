@@ -14,7 +14,7 @@ env:
 knativeDeploy: false
 
 service:
-  name: node-ci-test
+  name: nest-app
   type: ClusterIP
   externalPort: 80
   internalPort: 3000
