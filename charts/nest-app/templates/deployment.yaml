@@ -23,11 +23,20 @@ spec:
       - name: {{ .Chart.Name }}
         image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
         imagePullPolicy: {{ .Values.image.pullPolicy }}
+#         env:
+# {{- range $pkey, $pval := .Values.env }}
+#         - name: {{ $pkey }}
+#           value: {{ quote $pval }}
+# {{- end }}
         env:
-{{- range $pkey, $pval := .Values.env }}
-        - name: {{ $pkey }}
-          value: {{ quote $pval }}
-{{- end }}
+        - name: TYPEORM_HOST
+          value: {{ template "fullname" . }}-postgresql
+        - name: TYPEORM_USERNAME
+          value: {{ .Values.externaldb.username | quote }}
+        - name: TYPEORM_PASSWORD
+          value: {{ .Values.externaldb.password | quote }}
+        - name: TYPEORM_DATABASE
+          value: {{ .Values.externaldb.database | quote }}
         ports:
         - containerPort: {{ .Values.service.internalPort }}
         livenessProbe:
