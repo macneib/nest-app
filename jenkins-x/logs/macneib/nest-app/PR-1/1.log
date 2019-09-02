@@ -1,0 +1,310 @@
+
+Showing logs for build [32mmeta-macneib-nest-app-pr-1-serv-1[0m stage [32mmeta-pipeline[0m and container [32mstep-credential-initializer-kfkvs[0m
+{"level":"warn","ts":1567393169.6759546,"logger":"fallback-logger","caller":"logging/config.go:69","msg":"Fetch GitHub commit ID from kodata failed: \"ref: refs/heads/master\" is not a valid GitHub commit ID"}
+{"level":"info","ts":1567393169.6762755,"logger":"fallback-logger","caller":"creds-init/main.go:40","msg":"Credentials initialized."}
+
+Showing logs for build [32mmeta-macneib-nest-app-pr-1-serv-1[0m stage [32mmeta-pipeline[0m and container [32mstep-working-dir-initializer-kcsnv[0m
+{"level":"warn","ts":1567393170.9454045,"logger":"fallback-logger","caller":"logging/config.go:69","msg":"Fetch GitHub commit ID from kodata failed: open /var/run/ko/HEAD: no such file or directory"}
+{"level":"info","ts":1567393170.9459865,"logger":"fallback-logger","caller":"bash/main.go:65","msg":"Successfully executed command \"mkdir -p /workspace/source\""}
+
+Showing logs for build [32mmeta-macneib-nest-app-pr-1-serv-1[0m stage [32mmeta-pipeline[0m and container [32mstep-place-tools[0m
+
+Showing logs for build [32mmeta-macneib-nest-app-pr-1-serv-1[0m stage [32mmeta-pipeline[0m and container [32mstep-git-source-meta-macneib-nest-app-pr-1-serv-2b52s[0m
+{"level":"warn","ts":1567393177.0031729,"logger":"fallback-logger","caller":"logging/config.go:69","msg":"Fetch GitHub commit ID from kodata failed: \"ref: refs/heads/master\" is not a valid GitHub commit ID"}
+{"level":"info","ts":1567393177.3559508,"logger":"fallback-logger","caller":"git/git.go:102","msg":"Successfully cloned https://github.com/*******/nest-app.git @ a918b1c16dd8b72a650d8608d08cbfc88fd07331 in path /workspace/source"}
+
+Showing logs for build [32mmeta-macneib-nest-app-pr-1-serv-1[0m stage [32mmeta-pipeline[0m and container [32mstep-git-merge[0m
+Using SHAs from PULL_REFS=master:a918b1c16dd8b72a650d8608d08cbfc88fd07331,1:ed2fbdef59a3eed315c904ea05d3669092747140
+DEBUG: ran git fetch --unshallow origin ed2fbdef59a3eed315c904ea05d3669092747140: a918b1c16dd8b72a650d8608d08cbfc88fd07331: in 
+DEBUG: ran git checkout master in 
+DEBUG: ran git reset --hard a918b1c16dd8b72a650d8608d08cbfc88fd07331 in 
+DEBUG: ran clean --force -d . in 
+DEBUG: ran git merge ed2fbdef59a3eed315c904ea05d3669092747140 in 
+Merged SHA ed2fbdef59a3eed315c904ea05d3669092747140 with commit message 'changed readme' into base branch master
+Merged SHA 193b540c307a0f708f1d157c272fb41a67a4a525 with commit message 'fixed broken test' into base branch master
+
+Showing logs for build [32mmeta-macneib-nest-app-pr-1-serv-1[0m stage [32mmeta-pipeline[0m and container [32mstep-merge-pull-refs[0m
+DEBUG: ran git fetch origin ed2fbdef59a3eed315c904ea05d3669092747140: a918b1c16dd8b72a650d8608d08cbfc88fd07331: in 
+DEBUG: Unshallowed git repo in 
+DEBUG: ran git checkout master in 
+DEBUG: ran git reset --hard a918b1c16dd8b72a650d8608d08cbfc88fd07331 in 
+DEBUG: ran clean --force -d . in 
+DEBUG: ran git merge ed2fbdef59a3eed315c904ea05d3669092747140 in 
+Merged SHA ed2fbdef59a3eed315c904ea05d3669092747140 with commit message 'changed readme' into base branch master
+Merged SHA 193b540c307a0f708f1d157c272fb41a67a4a525 with commit message 'fixed broken test' into base branch master
+
+Showing logs for build [32mmeta-macneib-nest-app-pr-1-serv-1[0m stage [32mmeta-pipeline[0m and container [32mstep-create-effective-pipeline[0m
+Deleting and cloning the Jenkins X versions repo
+Cloning the Jenkins X versions repo https://github.com/jenkins-x/jenkins-x-versions.git with ref refs/heads/master to /builder/home/.**/jenkins-x-versions
+Effective pipeline written to jenkins-x-serverless-jenkins-effective.yml
+
+Showing logs for build [32mmeta-macneib-nest-app-pr-1-serv-1[0m stage [32mmeta-pipeline[0m and container [32mstep-create-tekton-crds[0m
+WARNING: failed to find secret kaniko-secret in namespace **: secrets "kaniko-secret" not found
+PipelineActivity for *******-nest-app-PR-1-1
+Applying changes 
+upserted PipelineResource *******-nest-app-pr-1-serverles for the git repository https://github.com/*******/nest-app.git
+upserted Task *******-nest-app-pr-1-serverles-from-build-pack-1
+upserted Pipeline *******-nest-app-pr-1-serverles-1
+created PipelineRun *******-nest-app-pr-1-serverles-1
+created PipelineStructure *******-nest-app-pr-1-serverles-1
+
+waiting for stage [32mfrom-build-pack[0m : container [32mstep-credential-initializer-whjkp[0m to start...
+
+
+Showing logs for build [32mmeta-macneib-nest-app-pr-1-serv-1[0m stage [32mfrom-build-pack[0m and container [32mstep-credential-initializer-whjkp[0m
+{"level":"warn","ts":1567393187.8316004,"logger":"fallback-logger","caller":"logging/config.go:69","msg":"Fetch GitHub commit ID from kodata failed: \"ref: refs/heads/master\" is not a valid GitHub commit ID"}
+{"level":"info","ts":1567393187.8319557,"logger":"fallback-logger","caller":"creds-init/main.go:40","msg":"Credentials initialized."}
+
+waiting for stage [32mfrom-build-pack[0m : container [32mstep-working-dir-initializer-dgrqt[0m to start...
+
+
+Showing logs for build [32mmeta-macneib-nest-app-pr-1-serv-1[0m stage [32mfrom-build-pack[0m and container [32mstep-working-dir-initializer-dgrqt[0m
+{"level":"warn","ts":1567393188.9257128,"logger":"fallback-logger","caller":"logging/config.go:69","msg":"Fetch GitHub commit ID from kodata failed: open /var/run/ko/HEAD: no such file or directory"}
+{"level":"info","ts":1567393188.9271374,"logger":"fallback-logger","caller":"bash/main.go:65","msg":"Successfully executed command \"mkdir -p /workspace/source /workspace/source/charts/preview\""}
+
+waiting for stage [32mfrom-build-pack[0m : container [32mstep-place-tools[0m to start...
+
+
+Showing logs for build [32mmeta-macneib-nest-app-pr-1-serv-1[0m stage [32mfrom-build-pack[0m and container [32mstep-place-tools[0m
+
+waiting for stage [32mfrom-build-pack[0m : container [32mstep-git-source-macneib-nest-app-pr-1-serverles-5swd6[0m to start...
+
+
+Showing logs for build [32mmeta-macneib-nest-app-pr-1-serv-1[0m stage [32mfrom-build-pack[0m and container [32mstep-git-source-macneib-nest-app-pr-1-serverles-5swd6[0m
+{"level":"warn","ts":1567393194.9902637,"logger":"fallback-logger","caller":"logging/config.go:69","msg":"Fetch GitHub commit ID from kodata failed: \"ref: refs/heads/master\" is not a valid GitHub commit ID"}
+{"level":"info","ts":1567393195.3533204,"logger":"fallback-logger","caller":"git/git.go:102","msg":"Successfully cloned https://github.com/*******/nest-app.git @ master in path /workspace/source"}
+
+waiting for stage [32mfrom-build-pack[0m : container [32mstep-git-merge[0m to start...
+
+
+Showing logs for build [32mmeta-macneib-nest-app-pr-1-serv-1[0m stage [32mfrom-build-pack[0m and container [32mstep-git-merge[0m
+Using SHAs from PULL_REFS=master:a918b1c16dd8b72a650d8608d08cbfc88fd07331,1:ed2fbdef59a3eed315c904ea05d3669092747140
+DEBUG: ran git fetch --unshallow origin ed2fbdef59a3eed315c904ea05d3669092747140: a918b1c16dd8b72a650d8608d08cbfc88fd07331: in 
+DEBUG: ran git checkout master in 
+DEBUG: ran git reset --hard a918b1c16dd8b72a650d8608d08cbfc88fd07331 in 
+DEBUG: ran clean --force -d . in 
+DEBUG: ran git merge ed2fbdef59a3eed315c904ea05d3669092747140 in 
+Merged SHA ed2fbdef59a3eed315c904ea05d3669092747140 with commit message 'changed readme' into base branch master
+Merged SHA 193b540c307a0f708f1d157c272fb41a67a4a525 with commit message 'fixed broken test' into base branch master
+
+waiting for stage [32mfrom-build-pack[0m : container [32mstep-build-npmrc[0m to start...
+
+
+Showing logs for build [32mmeta-macneib-nest-app-pr-1-serv-1[0m stage [32mfrom-build-pack[0m and container [32mstep-build-npmrc[0m
+WARNING: failed to find Secret npm-token in namespace **
+
+waiting for stage [32mfrom-build-pack[0m : container [32mstep-build-npm-install[0m to start...
+
+
+Showing logs for build [32mmeta-macneib-nest-app-pr-1-serv-1[0m stage [32mfrom-build-pack[0m and container [32mstep-build-npm-install[0m
+
+> grpc@1.23.1 install /workspace/source/node_modules/grpc
+> node-pre-gyp install --fallback-to-build --library=static_library
+
+node-pre-gyp WARN Using request for node-pre-gyp https download 
+[grpc] Success: "/workspace/source/node_modules/grpc/src/node/extension_binary/node-v67-linux-x64-glibc/grpc_node.node" is installed via remote
+
+> core-js@2.6.9 postinstall /workspace/source/node_modules/core-js
+> node scripts/postinstall || echo "ignore"
+
+[96mThank you for using core-js ([94m https://github.com/zloirock/core-js [96m) for polyfilling JavaScript standard library![0m
+
+[96mThe project needs your help! Please consider supporting of core-js on Open Collective or Patreon: [0m
+[96m>[94m https://opencollective.com/core-js [0m
+[96m>[94m https://www.patreon.com/zloirock [0m
+
+[96mAlso, the author of core-js ([94m https://github.com/zloirock [96m) is looking for a good job -)[0m
+
+
+> protobufjs@6.8.8 postinstall /workspace/source/node_modules/protobufjs
+> node scripts/postinstall
+
+
+> @nestjs/core@6.6.3 postinstall /workspace/source/node_modules/@nestjs/core
+> opencollective || exit 0
+
+                           Thanks for installing nest 
+                 Please consider donating to our open collective
+                        to help us maintain this package.
+                                         
+                           Number of contributors: 110
+                              Number of backers: 214
+                              Annual budget: $69,038
+                             Current balance: $4,889
+                                         
+             Become a partner: https://opencollective.com/nest/donate
+                                         
+
+> nodemon@1.19.1 postinstall /workspace/source/node_modules/nodemon
+> node bin/postinstall || exit 0
+
+[32mLove nodemon? You can now support the project via the open collective:[22m[39m
+ > [96m[1mhttps://opencollective.com/nodemon/donate[0m
+
+npm WARN nest-app@0.0.1 No repository field.
+npm WARN optional SKIPPING OPTIONAL DEPENDENCY: fsevents@1.2.9 (node_modules/fsevents):
+npm WARN notsup SKIPPING OPTIONAL DEPENDENCY: Unsupported platform for fsevents@1.2.9: wanted {"os":"darwin","arch":"any"} (current: {"os":"linux","arch":"x64"})
+
+added 1086 packages from 924 contributors and audited 21551 packages in 22.255s
+found 62 low severity vulnerabilities
+  run `npm audit fix` to fix them, or `npm audit` for details
+
+waiting for stage [32mfrom-build-pack[0m : container [32mstep-build-npm-test[0m to start...
+
+
+Showing logs for build [32mmeta-macneib-nest-app-pr-1-serv-1[0m stage [32mfrom-build-pack[0m and container [32mstep-build-npm-test[0m
+
+> nest-app@0.0.1 test /workspace/source
+> jest
+
+PASS src/app.controller.spec.ts
+  AppController
+    root
+      ✓ should return "Hello World!" (11ms)
+
+Test Suites: 1 passed, 1 total
+Tests:       1 passed, 1 total
+Snapshots:   0 total
+Time:        2.128s
+Ran all test suites.
+
+waiting for stage [32mfrom-build-pack[0m : container [32mstep-build-container-build[0m to start...
+
+
+Showing logs for build [32mmeta-macneib-nest-app-pr-1-serv-1[0m stage [32mfrom-build-pack[0m and container [32mstep-build-container-build[0m
+[36mINFO[0m[0000] Downloading base image node:10-alpine        
+2019/09/02 03:00:23 No matching credentials were found, falling back on anonymous
+[36mINFO[0m[0000] Error while retrieving image from cache: getting file info: stat /workspace/sha256:5cf3bedcacc2b6ae46504c4c165c74ae88b5fb5eb67f9dfcc3b0cca193f366ff: no such file or directory 
+[36mINFO[0m[0000] Downloading base image node:10-alpine        
+2019/09/02 03:00:24 No matching credentials were found, falling back on anonymous
+[36mINFO[0m[0001] Using files from context: [/workspace/source] 
+[36mINFO[0m[0002] Checking for cached layer 10.107.210.165:5000/todo/cache:f545330fef05ec8beaeea5a8a359a7ed96ca456c01d440bf2e0099b6c593f9b1... 
+2019/09/02 03:00:26 No matching credentials were found, falling back on anonymous
+[36mINFO[0m[0002] No cached layer found for cmd RUN npm install 
+[36mINFO[0m[0002] Unpacking rootfs as cmd RUN npm install requires it. 
+[36mINFO[0m[0011] Taking snapshot of full filesystem...        
+[36mINFO[0m[0011] WORKDIR /usr/src/app                         
+[36mINFO[0m[0011] cmd: workdir                                 
+[36mINFO[0m[0011] Changed working directory to /usr/src/app    
+[36mINFO[0m[0011] Creating directory /usr/src/app              
+[36mINFO[0m[0011] Taking snapshot of files...                  
+[36mINFO[0m[0011] Using files from context: [/workspace/source] 
+[36mINFO[0m[0012] COPY . .                                     
+[36mINFO[0m[0015] Taking snapshot of files...                  
+[36mINFO[0m[0015] RUN npm install                              
+[36mINFO[0m[0015] cmd: /bin/sh                                 
+[36mINFO[0m[0015] args: [-c npm install]                       
+
+> grpc@1.23.1 install /usr/src/app/node_modules/grpc
+> node-pre-gyp install --fallback-to-build --library=static_library
+
+node-pre-gyp WARN Using request for node-pre-gyp https download 
+[grpc] Success: "/usr/src/app/node_modules/grpc/src/node/extension_binary/node-v64-linux-x64-musl/grpc_node.node" is installed via remote
+
+> core-js@2.6.9 postinstall /usr/src/app/node_modules/core-js
+> node scripts/postinstall || echo "ignore"
+
+[96mThank you for using core-js ([94m https://github.com/zloirock/core-js [96m) for polyfilling JavaScript standard library![0m
+
+[96mThe project needs your help! Please consider supporting of core-js on Open Collective or Patreon: [0m
+[96m>[94m https://opencollective.com/core-js [0m
+[96m>[94m https://www.patreon.com/zloirock [0m
+
+[96mAlso, the author of core-js ([94m https://github.com/zloirock [96m) is looking for a good job -)[0m
+
+
+> protobufjs@6.8.8 postinstall /usr/src/app/node_modules/protobufjs
+> node scripts/postinstall
+
+
+> @nestjs/core@6.6.3 postinstall /usr/src/app/node_modules/@nestjs/core
+> opencollective || exit 0
+
+                           Thanks for installing nest 
+                 Please consider donating to our open collective
+                        to help us maintain this package.
+                                         
+                           Number of contributors: 110
+                              Number of backers: 214
+                              Annual budget: $69,038
+                             Current balance: $4,889
+                                         
+             Become a partner: https://opencollective.com/nest/donate
+                                         
+
+> nodemon@1.19.1 postinstall /usr/src/app/node_modules/nodemon
+> node bin/postinstall || exit 0
+
+[32mLove nodemon? You can now support the project via the open collective:[22m[39m
+ > [96m[1mhttps://opencollective.com/nodemon/donate[0m
+
+npm WARN nest-app@0.0.1 No description
+npm WARN nest-app@0.0.1 No repository field.
+npm WARN optional SKIPPING OPTIONAL DEPENDENCY: fsevents@1.2.9 (node_modules/fsevents):
+npm WARN notsup SKIPPING OPTIONAL DEPENDENCY: Unsupported platform for fsevents@1.2.9: wanted {"os":"darwin","arch":"any"} (current: {"os":"linux","arch":"x64"})
+
+added 1086 packages from 924 contributors and audited 21551 packages in 22.5s
+found 62 low severity vulnerabilities
+  run `npm audit fix` to fix them, or `npm audit` for details
+[36mINFO[0m[0038] Taking snapshot of full filesystem...        
+[36mINFO[0m[0044] EXPOSE 3000                                  
+[36mINFO[0m[0044] cmd: EXPOSE                                  
+[36mINFO[0m[0044] Adding exposed port: 3000/tcp                
+[36mINFO[0m[0044] No files changed in this command, skipping snapshotting. 
+[36mINFO[0m[0044] CMD [ "npm", "run", "start:prod" ]           
+[36mINFO[0m[0044] No files changed in this command, skipping snapshotting. 
+[36mINFO[0m[0044] Pushing layer 10.107.210.165:5000/todo/cache:f545330fef05ec8beaeea5a8a359a7ed96ca456c01d440bf2e0099b6c593f9b1 to cache now 
+2019/09/02 03:01:08 pushed blob: sha256:11d89fa556f8f79ede35c5dcbba7a44677f23fa6cc7dcfcc2f1aeab6f1c52ac7
+2019/09/02 03:01:14 pushed blob: sha256:54227093f853c8af785bce3c5acb8de82705571dd6a59bae73b2f87af14706d0
+2019/09/02 03:01:14 10.107.210.165:5000/todo/cache:f545330fef05ec8beaeea5a8a359a7ed96ca456c01d440bf2e0099b6c593f9b1: digest: sha256:9153e221c41c0ed7f6b2f29a0b2e363a4d96edc35a198a810f371c7a6990fd5e size: 430
+2019/09/02 03:01:14 pushed blob: sha256:5bdaaac76f8374a4756f0479174a3aaa30cedeea1a47c79dec3756b6b031b91a
+2019/09/02 03:01:14 pushed blob: sha256:321e23fd5bb10346869b73583fd0c79925639bb9f3bf077444fde419536b1bff
+2019/09/02 03:01:14 pushed blob: sha256:e1e4e4e6b789bbfd378c05b9647d28c817462b943d891d5a8b16105b7dfb5dba
+2019/09/02 03:01:14 pushed blob: sha256:284842a36c0d8eea230cfd5e7a4a6b450fcd63d1c4737f236a91e1671455050a
+2019/09/02 03:01:16 pushed blob: sha256:56174ae7ed1d5c96ca66882e205154d7067a1a8a325bd8fdec6d5f933f66e0a3
+2019/09/02 03:01:17 pushed blob: sha256:e7c96db7181be991f19a9fb6975cdbbd73c65f4a2681348e63a141a2192a5f10
+2019/09/02 03:01:21 pushed blob: sha256:54227093f853c8af785bce3c5acb8de82705571dd6a59bae73b2f87af14706d0
+2019/09/02 03:01:23 pushed blob: sha256:50958466d97a8d1ceedc4e851de4fc43e3e3e0618e548597f63f0b546cb8797c
+2019/09/02 03:01:23 10.107.210.165:5000/*******/nest-app:0.0.0-SNAPSHOT-PR-1-1: digest: sha256:597ebb8ae9a2233598126af4fc9da00e34de44248c419e189b133bac6515eebf size: 1406
+
+waiting for stage [32mfrom-build-pack[0m : container [32mstep-postbuild-post-build[0m to start...
+
+
+Showing logs for build [32mmeta-macneib-nest-app-pr-1-serv-1[0m stage [32mfrom-build-pack[0m and container [32mstep-postbuild-post-build[0m
+no CVE provider running in the current ** namespace so skip adding image to be analysed
+
+waiting for stage [32mfrom-build-pack[0m : container [32mstep-promote-make-preview[0m to start...
+
+
+Showing logs for build [32mmeta-macneib-nest-app-pr-1-serv-1[0m stage [32mfrom-build-pack[0m and container [32mstep-promote-make-preview[0m
+sed -i -e "s/version:.*/version: 0.0.0-SNAPSHOT-PR-1-1/" Chart.yaml
+sed -i -e "s/version:.*/version: 0.0.0-SNAPSHOT-PR-1-1/" ../*/Chart.yaml
+sed -i -e "s|repository:.*|repository: 10.107.210.165:5000\/*******\/nest-app|" values.yaml
+sed -i -e "s/tag:.*/tag: 0.0.0-SNAPSHOT-PR-1-1/" values.yaml
+echo "  version: 0.0.0-SNAPSHOT-PR-1-1" >> requirements.yaml
+** step helm build
+WARNING: No $CHART_REPOSITORY defined so using the default value of: http://jenkins-x-chartmuseum:8080
+Adding missing Helm repo: storage.googleapis.com https://storage.googleapis.com/chartmuseum.jenkins-x.io
+Successfully added Helm repository storage.googleapis.com.
+Adding missing Helm repo: jenkins-x-chartmuseum http://jenkins-x-chartmuseum:8080
+Successfully added Helm repository jenkins-x-chartmuseum.
+WARNING: No $CHART_REPOSITORY defined so using the default value of: http://jenkins-x-chartmuseum:8080
+Adding missing Helm repo: chartmuseum.jenkins-x.io http://chartmuseum.jenkins-x.io
+Successfully added Helm repository chartmuseum.jenkins-x.io.
+error: failed to build the dependencies of chart '.': failed to run 'helm dependency build' command in directory '.', output: 'Hang tight while we grab the latest from your chart repositories...
+...Unable to get an update from the "local" chart repository (http://127.0.0.1:8879/charts):
+	Get http://127.0.0.1:8879/charts/index.yaml: dial tcp 127.0.0.1:8879: connect: connection refused
+...Successfully got an update from the "jenkins-x-chartmuseum" chart repository
+...Successfully got an update from the "storage.googleapis.com" chart repository
+...Successfully got an update from the "chartmuseum.jenkins-x.io" chart repository
+...Successfully got an update from the "stable" chart repository
+Update Complete.
+Saving 3 charts
+Downloading exposecontroller from repo http://chartmuseum.jenkins-x.io
+Downloading exposecontroller from repo http://chartmuseum.jenkins-x.io
+Save error occurred:  chart metadata (Chart.yaml) missing
+Deleting newly downloaded charts, restoring pre-update state
+Error: chart metadata (Chart.yaml) missing'
+make: *** [preview] Error 1
+[31m
+Pipeline failed on stage 'from-build-pack' : container 'step-promote-make-preview'. The execution of the pipeline has stopped.[0m
