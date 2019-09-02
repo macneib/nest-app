@@ -14,3 +14,4 @@ dependencies:
 - alias: preview
   name: nest-app
   repository: file://../nest-app
+  version: 
