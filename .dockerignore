@@ -5,6 +5,7 @@ coverage
 docker-compose.yml
 README.md
 charts
+telepresence.log
 
 # Node Files #
 node_modules
