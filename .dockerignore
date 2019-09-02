@@ -11,3 +11,9 @@ telepresence.log
 node_modules
 npm-debug.log
 npm-debug.log.*
+
+draft.toml
+charts/
+NOTICE
+LICENSE
+README.md
