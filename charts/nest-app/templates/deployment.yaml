@@ -30,7 +30,7 @@ spec:
 # {{- end }}
         env:
         - name: TYPEORM_HOST
-          value: {{ template "postgresql.fullname" . }}-postgresql
+          value: {{ template "fullname" . }}-postgresql
         - name: TYPEORM_USERNAME
           value: {{ .Values.externaldb.username | quote }}
         - name: TYPEORM_PASSWORD
